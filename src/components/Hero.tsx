@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute bottom-32 right-16 w-16 h-16 bg-secondary/20 rotate-12 animate-float" style={{animationDelay: '2s'}}></div>
       <div className="absolute top-1/3 right-20 w-12 h-12 border-2 border-gold-accent/30 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
       
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-10 pt-20">
         <div className="animate-fade-in-up">
           {/* Logo */}
           <div className="mb-8">
@@ -42,10 +42,10 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#about" className="btn-hero">
+            <a href="/about" className="bg-primary text-white hover:bg-primary/90 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
               Discover Our Mission
             </a>
-            <a href="#membership" className="btn-secondary">
+            <a href="/membership" className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
               Join IESA
             </a>
           </div>
