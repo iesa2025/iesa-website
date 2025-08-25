@@ -13,32 +13,20 @@ const Hero = () => {
             alt="IESA Logo - Initiative of Engineers for Service and Academics" 
             className="w-24 h-24 mx-auto mb-6 drop-shadow-2xl"
           />
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-primary mb-4">
-            Welcome to IESA
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-primary mb-8">
+            Empowering Engineers with
           </h1>
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-secondary mb-6">
-            Initiative of Engineers for Service and Academics
-          </h2>
-          <p className="text-xl md:text-2xl text-primary/80 max-w-4xl mx-auto mb-8 leading-relaxed">
-            Empowering <strong>Muslim engineering students</strong> across <strong>Telangana</strong> through 
-            <strong> academic excellence</strong>, <strong>faith-based learning</strong>, 
-            <strong> skill development</strong>, and <strong>impactful community service</strong>. 
-            Building a future-ready generation grounded in <strong>Islamic values</strong> and equipped with <strong>global competencies</strong>.
-          </p>
           
-          {/* Key Features */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h3 className="font-semibold text-primary text-lg mb-2">Muslim Engineering Community</h3>
-              <p className="text-primary/80">Connect with like-minded Muslim engineers across Telangana</p>
+          {/* Three Pill Capsules */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+            <div className="px-6 py-3 bg-blue-100 text-primary rounded-full font-semibold text-lg shadow-md">
+              Knowledge
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h3 className="font-semibold text-primary text-lg mb-2">Academic Excellence</h3>
-              <p className="text-primary/80">Mentorship, scholarships, and engineering career support</p>
+            <div className="px-6 py-3 bg-yellow-100 text-primary rounded-full font-semibold text-lg shadow-md">
+              Faith
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h3 className="font-semibold text-primary text-lg mb-2">Islamic Values</h3>
-              <p className="text-primary/80">Faith-based learning and character development</p>
+            <div className="px-6 py-3 bg-blue-100 text-primary rounded-full font-semibold text-lg shadow-md">
+              Service
             </div>
           </div>
 
