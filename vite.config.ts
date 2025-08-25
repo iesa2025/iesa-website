@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     sourcemap: mode === 'development',
-    minify: mode === 'production' ? 'terser' : false,
+    minify: mode === 'production' ? 'esbuild' : false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -32,12 +32,6 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    terserOptions: mode === 'production' ? {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    } : undefined,
   },
   preview: {
     port: 4173,
