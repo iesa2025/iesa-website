@@ -2,8 +2,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +14,44 @@ const ContactPage = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!formData.name || !formData.email || !formData.college || !formData.message) {
       toast.error("Please fill in all fields");
       return;
     }
     
-    toast.success("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", college: "", message: "" });
+    setIsSubmitting(true);
+    
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        college: formData.college,
+        message: formData.message,
+        to_email: "iesa.queries@gmail.com"
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_cguut5r',
+        'template_zfhtnu4',
+        templateParams,
+        'w4mIq1aBbcp0stQqx'
+      );
+      
+      toast.success("Thank you for your message! We'll get back to you soon.");
+      setFormData({ name: "", email: "", college: "", message: "" });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast.error("Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,13 +60,6 @@ const ContactPage = () => {
       [e.target.name]: e.target.value
     });
   };
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" }
-  ];
 
   return (
     <div className="min-h-screen bg-hero-bg">
@@ -48,7 +71,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in-up">
             <img 
-              src="/lovable-uploads/de185688-6a71-4f04-b4f3-a00f468dc4aa.png" 
+              src="/iesalogo.png" 
               alt="IESA Logo" 
               className="w-24 h-24 mx-auto mb-6 drop-shadow-2xl"
             />
@@ -103,36 +126,17 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary text-lg">Phone</h4>
-                    <div className="text-muted-foreground">
-                      <p>+91 82475 79990</p>
-                      <p>+91 74165 91592</p>
-                    </div>
+                    <p className="text-muted-foreground">+91 82475 79990</p>
+                    <p className="text-muted-foreground">+91 74165 91592</p>
                   </div>
-                </div>
-              </div>
-
-              {/* Social Media Links */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-                <h4 className="font-semibold text-primary mb-4 text-lg">Follow Us</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      className="w-12 h-12 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </a>
-                  ))}
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="animate-fade-in-up">
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-                <h3 className="text-3xl font-display font-bold text-primary mb-8">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                <h3 className="text-2xl font-display font-bold text-primary mb-6">
                   Send us a Message
                 </h3>
                 
@@ -150,6 +154,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                         placeholder="Your full name"
+                        disabled={isSubmitting}
                       />
                     </div>
                     
@@ -165,6 +170,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                         placeholder="your.email@example.com"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -181,6 +187,7 @@ const ContactPage = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="Your college or institution"
+                      disabled={isSubmitting}
                     />
                   </div>
                   
@@ -196,14 +203,16 @@ const ContactPage = () => {
                       rows={4}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                       placeholder="Tell us about your interest in IESA or any questions you have..."
+                      disabled={isSubmitting}
                     ></textarea>
                   </div>
                   
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white hover:bg-primary/90 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                    className="w-full btn-hero disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>

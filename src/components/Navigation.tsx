@@ -33,11 +33,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300">
             <img 
-              src="/lovable-uploads/de185688-6a71-4f04-b4f3-a00f468dc4aa.png" 
+              src="/iesalogo.png" 
               alt="IESA Logo" 
-              className="h-8 w-8"
+              className="h-8 w-8 brightness-0 invert"
             />
-            <span className="font-display font-bold text-xl text-primary">IESA</span>
+            <span className="font-display font-bold text-xl">IESA</span>
           </Link>
           
           {/* Desktop Navigation */}

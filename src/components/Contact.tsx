@@ -1,7 +1,8 @@
 
 import { useState } from "react";
-import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,16 +12,45 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     // Simple form validation
     if (!formData.name || !formData.email || !formData.college || !formData.message) {
       toast.error("Please fill in all fields");
       return;
     }
     
-    toast.success("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", college: "", message: "" });
+    setIsSubmitting(true);
+    
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        college: formData.college,
+        message: formData.message,
+        to_email: "iesa.queries@gmail.com"
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_cguut5r',
+        'template_zfhtnu4',
+        templateParams,
+        'w4mIq1aBbcp0stQqx'
+      );
+      
+      toast.success("Thank you for your message! We'll get back to you soon.");
+      setFormData({ name: "", email: "", college: "", message: "" });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast.error("Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,13 +59,6 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" }
-  ];
 
   return (
     <section id="contact" className="py-20 bg-section-bg">
@@ -75,7 +98,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-primary">Email</h4>
-                  <p className="text-muted-foreground">contact@iesa.org</p>
+                  <p className="text-muted-foreground">iesa.queries@gmail.com</p>
                 </div>
               </div>
               
@@ -85,25 +108,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-primary">Phone</h4>
-                  <p className="text-muted-foreground">+91 XXX XXX XXXX</p>
+                  <p className="text-muted-foreground">+91 82475 79990</p>
+                  <p className="text-muted-foreground">+91 74165 91592</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Social Media Links */}
-            <div>
-              <h4 className="font-semibold text-primary mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="w-10 h-10 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
               </div>
             </div>
           </div>
@@ -129,6 +136,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="Your full name"
+                      disabled={isSubmitting}
                     />
                   </div>
                   
@@ -144,6 +152,7 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="your.email@example.com"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -160,6 +169,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                     placeholder="Your college or institution"
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -175,14 +185,16 @@ const Contact = () => {
                     rows={4}
                     className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                     placeholder="Tell us about your interest in IESA or any questions you have..."
+                    disabled={isSubmitting}
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full btn-hero"
+                  className="w-full btn-hero disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

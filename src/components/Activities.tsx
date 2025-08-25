@@ -11,7 +11,7 @@ const Activities = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="section-title">Our Activities</h2>
           <p className="section-subtitle">
-            Comprehensive programs designed to nurture both professional and spiritual growth
+            Comprehensive programs for professional and spiritual growth
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const Activities = () => {
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               We're working on something amazing! Our activities page will showcase all the exciting 
-              programs, events, and initiatives that make IESA a vibrant community for Muslim engineers.
+              programs and events that make IESA a vibrant community.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 text-left">

@@ -1,16 +1,26 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "iesa-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "IESA - Initiative of Engineers for Service and Academics - Official Website",
+  "keywords": ["IESA", "Muslim engineers", "Engineering students", "Telangana", "Islamic values", "Community service"],
+  "author": "IESA Team",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",

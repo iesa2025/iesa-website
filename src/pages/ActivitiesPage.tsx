@@ -21,7 +21,7 @@ const ActivitiesPage = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-fade-in-up">
             <img 
-              src="/lovable-uploads/de185688-6a71-4f04-b4f3-a00f468dc4aa.png" 
+              src="/iesalogo.png" 
               alt="IESA Logo" 
               className="w-24 h-24 mx-auto mb-6 drop-shadow-2xl"
             />
@@ -29,7 +29,7 @@ const ActivitiesPage = () => {
               Our Activities
             </h1>
             <p className="text-xl text-primary/80 max-w-3xl mx-auto">
-              Comprehensive programs designed to nurture both professional and spiritual growth
+              Comprehensive programs for professional and spiritual growth
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const ActivitiesPage = () => {
               
               <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto">
                 We're working on something amazing! Our activities page will showcase all the exciting 
-                programs, events, and initiatives that make IESA a vibrant community for Muslim engineers.
+                programs and events that make IESA a vibrant community.
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -113,8 +113,8 @@ const ActivitiesPage = () => {
                 </div>
               </div>
 
-              <div className="text-center">
-                <a href="/contact" className="bg-primary text-white hover:bg-primary/90 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block">
+              <div className="mt-8">
+                <a href="#contact" className="btn-hero">
                   Stay Updated
                 </a>
               </div>

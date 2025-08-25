@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# IESA Website
 
-## Project info
+## About IESA
 
-**URL**: https://lovable.dev/projects/b0265212-8185-4562-9da4-71ae4b274132
+**IESA** (Initiative of Engineers for Service and Academics) is a student-led platform committed to empowering Muslim engineering students across Telangana through academic excellence, faith-based learning, skill development, and impactful community service.
 
-## How can I edit this code?
+Our mission is to build a future-ready generation grounded in Islamic values and equipped with global competencies.
 
-There are several ways of editing your application.
+## Website Features
 
-**Use Lovable**
+- **Modern Design**: Elegant, responsive website built with React and Tailwind CSS
+- **Contact Form**: Functional contact form that sends inquiries directly to `iesa.queries@gmail.com`
+- **Responsive Layout**: Mobile-friendly design that works on all devices
+- **Islamic-Inspired Design**: Beautiful Islamic patterns and modern aesthetics
+- **Easy Navigation**: Clear navigation between different sections and pages
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b0265212-8185-4562-9da4-71ae4b274132) and start prompting.
+## Contact Information
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Email**: iesa.queries@gmail.com
+- **Phone**: +91 82475 79990, +91 74165 91592
+- **Location**: Telangana, India
+- **Instagram**: [@iesa_team](https://www.instagram.com/iesa_team/)
+- **LinkedIn**: [iesateam](https://www.linkedin.com/in/iesateam)
 
-**Use your preferred IDE**
+## Join IESA
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Ready to be part of our community? [Register here](https://shorturl.at/PNLAF)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Technology Stack
 
-Follow these steps:
+This website is built with modern web technologies:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS with custom Islamic-inspired design system
+- **UI Components**: shadcn/ui component library
+- **Build Tool**: Vite for fast development and building
+- **Contact Form**: EmailJS for reliable email delivery
+- **Deployment**: Ready for deployment on any hosting platform
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Development
 
-# Step 3: Install the necessary dependencies.
-npm i
+To run this website locally:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── integrations/       # External service integrations
+└── index.css           # Global styles and design system
+```
 
-**Use GitHub Codespaces**
+## Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This website is maintained by the IESA team. For any technical questions or contributions, please contact us through the website.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b0265212-8185-4562-9da4-71ae4b274132) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**IESA** - Empowering Muslim Engineering Students in Telangana 🚀

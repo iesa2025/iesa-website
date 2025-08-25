@@ -13,42 +13,42 @@ const Departments = () => {
     {
       name: "Tarbiyah (Islamic Guidance)",
       icon: BookOpen,
-      description: "Strengthening Imaan, character-building, and spiritual bonding through learning circles and reminders.",
+      description: "Strengthening Imaan and character through learning circles and reminders.",
       leads: "Muskaan & Ayesha",
       gradient: "from-green-400 to-green-600"
     },
     {
       name: "Academics",
       icon: GraduationCap,
-      description: "Providing mentorship, scholarships, notes, and academic support for engineering success.",
+      description: "Mentorship, scholarships, and academic support for engineering success.",
       leads: "Muqeet & Aliya",
       gradient: "from-blue-400 to-blue-600"
     },
     {
       name: "Event Management",
       icon: Calendar,
-      description: "Organizing programs, hackathons, visits, and IESA-wide gatherings for dynamic learning.",
+      description: "Organizing programs, hackathons, and IESA-wide gatherings.",
       leads: "Taher & Asad",
       gradient: "from-pink-400 to-pink-600"
     },
     {
       name: "Media & Design",
       icon: Palette,
-      description: "Creating posters, videos, and social content to unify IESA's branding and visual da'wah.",
+      description: "Creating posters, videos, and social content for branding and da'wah.",
       leads: "Uzair & Maheeya",
       gradient: "from-red-400 to-red-600"
     },
     {
       name: "HR & Drafting",
       icon: PenTool,
-      description: "Recruiting college reps, maintaining discipline, and ensuring smooth internal communication.",
+      description: "Recruiting college reps and maintaining internal communication.",
       leads: "Batool & Aliya",
       gradient: "from-yellow-400 to-yellow-600"
     },
     {
       name: "Tech & Research",
       icon: Code,
-      description: "Building innovation through web dev, hackathons, and research aligned with Islamic values.",
+      description: "Building innovation through web development and hackathons.",
       leads: "Sariah & Rafe",
       gradient: "from-cyan-400 to-cyan-600"
     }
@@ -95,15 +95,6 @@ const Departments = () => {
           ))}
         </div>
 
-        {/* Islamic Foundation Quote */}
-        <div className="text-center mb-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
-          <h4 className="text-xl font-display font-bold text-primary mb-4">Islamic Foundation</h4>
-          <p className="text-muted-foreground italic leading-relaxed mb-2">
-            "Whoever relieves a Muslim of a burden from the burdens of the world, Allah will relieve him of a burden from the burdens on the Day of Judgement..."
-          </p>
-          <p className="text-sm text-muted-foreground">— Jami` at-Tirmidhi 1930</p>
-        </div>
-
         {/* Call to Action */}
         <div className="text-center animate-fade-in-up">
           <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
@@ -113,7 +104,7 @@ const Departments = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Join one of our departments and contribute to the growth of Muslim engineering community in Telangana.
             </p>
-            <a href="#membership" className="btn-hero">
+            <a href="https://shorturl.at/PNLAF" target="_blank" rel="noopener noreferrer" className="btn-hero">
               Join IESA Today
             </a>
           </div>
