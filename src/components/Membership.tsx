@@ -1,5 +1,5 @@
 
-import { Users, GraduationCap, Heart, Star } from "lucide-react";
+import { Users, GraduationCap, Heart, Star, Mail, Phone } from "lucide-react";
 
 const Membership = () => {
   const benefits = [
@@ -31,17 +31,17 @@ const Membership = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="section-title">Join Our Community</h2>
           <p className="section-subtitle">
-            Open to all Muslim engineering students across Telangana with dedicated representation for both boys and girls from every college
+            Open to all Muslim engineering students across Telangana - completely free membership
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="animate-fade-in-up">
             <h3 className="text-3xl font-display font-bold text-primary mb-6">
-              Inclusive & Welcoming
+              Membership Details
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              IESA believes in the power of diversity and inclusion. We welcome all Muslim engineering 
+              IESA believes in the power of unity and inclusion. We welcome all Muslim engineering 
               students regardless of their background, specialization, or level of Islamic knowledge.
             </p>
             <div className="space-y-4">
@@ -49,19 +49,37 @@ const Membership = () => {
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <span className="text-muted-foreground">Boys & Girls representatives from each college</span>
+                <span className="text-muted-foreground"><strong>Who can join?</strong> All Muslim Engineering Students in Telangana</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <span className="text-muted-foreground">All engineering disciplines welcome</span>
+                <span className="text-muted-foreground"><strong>Colleges:</strong> Open to all colleges across Telangana</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <span className="text-muted-foreground">Free membership for students</span>
+                <span className="text-muted-foreground"><strong>Fees:</strong> No fees – completely free</span>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl">
+              <h4 className="font-display font-semibold text-primary mb-4">Contact Us</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <span className="text-muted-foreground">iesa.queries@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-primary" />
+                  <div className="text-muted-foreground">
+                    <div>+91 82475 79990</div>
+                    <div>+91 74165 91592</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -98,9 +116,12 @@ const Membership = () => {
               Join hundreds of Muslim engineering students who are building their careers 
               while strengthening their faith and serving their community.
             </p>
+            <p className="text-primary-foreground/90 mb-6 font-medium">
+              ✨ Friendly team, spiritual growth, and career support – all in one!
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact" className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                Apply for Membership
+                Register Now
               </a>
               <a href="#departments" className="border-2 border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded-xl font-semibold transition-all duration-300">
                 Explore Departments

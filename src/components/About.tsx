@@ -35,13 +35,22 @@ const About = () => {
     },
   ];
 
+  const services = [
+    "Strengthen Islamic values through reminders & circles",
+    "Academic support – scholarships, mentorship, and notes",
+    "Technology projects – web development & real-world applications",
+    "Events – hackathons, workshops, monthly meets",
+    "After-BE Unit – career prep for UPSC, GATE, Masters",
+    "Internships & Placements – latest openings, deadlines, and alumni connect"
+  ];
+
   return (
     <section id="about" className="py-20 bg-section-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="section-title">About IESA</h2>
           <p className="section-subtitle">
-            Building a future-ready generation of Muslim engineers grounded in Islamic values and equipped with global competencies.
+            Initiative of Engineers for Service and Academics - A student-led platform empowering Muslim engineering students across Telangana
           </p>
         </div>
 
@@ -49,26 +58,69 @@ const About = () => {
           <div className="animate-fade-in-up">
             <h3 className="text-3xl font-display font-bold text-primary mb-6">Our Mission</h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              To create a supportive ecosystem for Muslim engineering students across Telangana, 
-              fostering academic excellence while strengthening Islamic identity and values.
+              IESA is committed to empowering Muslim engineering students across Telangana through 
+              academic excellence, faith-based learning, skill development, and impactful community service.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We bridge the gap between modern education and Islamic principles, preparing 
-              engineers who excel professionally while contributing meaningfully to society.
+              We aim to build a future-ready generation grounded in Islamic values and equipped with global competencies.
             </p>
+            
+            <div className="mt-8">
+              <h4 className="text-xl font-display font-semibold text-primary mb-4">Why Join IESA?</h4>
+              <div className="grid gap-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">📚 Access scholarships, notes, and academic mentorship</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">🎯 Get career guidance for Internships, GATE, UPSC & Masters</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">💻 Learn Web Development, join tech mentor circles, and lead real projects</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">🌐 Contribute to Islamic websites, social work, and donation programs</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">🤝 Connect with like-minded students from colleges across Telangana</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-muted-foreground">🕌 Grow spiritually with Islamic reminders, circles, and guidance</span>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="relative">
             <div className="islamic-pattern-subtle absolute inset-0 rounded-2xl"></div>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl relative">
-              <h4 className="text-2xl font-display font-bold text-primary mb-4">Our Vision</h4>
-              <p className="text-muted-foreground leading-relaxed">
-                A thriving community of Muslim engineers who lead with integrity, 
-                innovate with purpose, and serve with compassion, contributing to 
-                both technological advancement and Islamic civilization.
-              </p>
+              <h4 className="text-2xl font-display font-bold text-primary mb-6">Our Services</h4>
+              <div className="space-y-3">
+                {services.map((service, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground leading-relaxed">{service}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Quranic Verse Section */}
+        <div className="text-center mb-12 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
+          <div className="text-2xl font-display text-primary mb-4 leading-relaxed">
+            وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ
+          </div>
+          <p className="text-lg text-muted-foreground italic mb-2">
+            "And cooperate with one another in righteousness and piety, but do not cooperate in sin and aggression."
+          </p>
+          <p className="text-sm text-muted-foreground">— Surah Al-Ma'idah (5:2)</p>
         </div>
 
         {/* Core Values */}

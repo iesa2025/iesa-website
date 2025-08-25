@@ -2,77 +2,55 @@
 import { 
   BookOpen, 
   GraduationCap, 
-  Briefcase, 
-  Code, 
-  Microscope, 
   Calendar,
-  Users,
   Palette,
   PenTool,
-  DollarSign
+  Code
 } from "lucide-react";
 
 const Departments = () => {
   const departments = [
     {
-      name: "Tarbiyah",
+      name: "Tarbiyah (Islamic Guidance)",
       icon: BookOpen,
-      description: "Faith & Islamic Guidance through spiritual development and character building",
+      description: "Strengthening Imaan, character-building, and spiritual bonding through learning circles and reminders.",
+      leads: "Muskaan & Ayesha",
       gradient: "from-green-400 to-green-600"
     },
     {
       name: "Academics",
       icon: GraduationCap,
-      description: "Mentorship, Scholarships, and academic excellence support systems",
+      description: "Providing mentorship, scholarships, notes, and academic support for engineering success.",
+      leads: "Muqeet & Aliya",
       gradient: "from-blue-400 to-blue-600"
     },
     {
-      name: "Placements & Internships",
-      icon: Briefcase,
-      description: "Career Preparation & Alumni Connections for professional growth",
-      gradient: "from-purple-400 to-purple-600"
-    },
-    {
-      name: "Technology",
-      icon: Code,
-      description: "Web Development, Tech Mentorship, and innovation initiatives",
-      gradient: "from-cyan-400 to-cyan-600"
-    },
-    {
-      name: "Research",
-      icon: Microscope,
-      description: "Islamic & Engineering Innovation research and development",
-      gradient: "from-orange-400 to-orange-600"
-    },
-    {
-      name: "Events",
+      name: "Event Management",
       icon: Calendar,
-      description: "Hackathons, Educational Visits, and Monthly Community Meetings",
+      description: "Organizing programs, hackathons, visits, and IESA-wide gatherings for dynamic learning.",
+      leads: "Taher & Asad",
       gradient: "from-pink-400 to-pink-600"
-    },
-    {
-      name: "After-BE Unit",
-      icon: Users,
-      description: "UPSC, GATE, Higher Studies preparation and Alumni Support",
-      gradient: "from-indigo-400 to-indigo-600"
     },
     {
       name: "Media & Design",
       icon: Palette,
-      description: "Branding, Social Media Management, and Creative Content",
+      description: "Creating posters, videos, and social content to unify IESA's branding and visual da'wah.",
+      leads: "Uzair & Maheeya",
       gradient: "from-red-400 to-red-600"
     },
     {
       name: "HR & Drafting",
       icon: PenTool,
-      description: "Recruitment processes and Professional Content Writing",
+      description: "Recruiting college reps, maintaining discipline, and ensuring smooth internal communication.",
+      leads: "Batool & Aliya",
       gradient: "from-yellow-400 to-yellow-600"
     },
     {
-      name: "Finance",
-      icon: DollarSign,
-      description: "Fundraising initiatives and Treasury Management",
-      gradient: "from-emerald-400 to-emerald-600"
+      name: "Tech & Research",
+      icon: Code,
+      description: "Building innovation through web dev, hackathons, and research aligned with Islamic values.",
+      leads: "Sariah & Rafe",
+      gradient: "from-cyan-400 to-cyan-600"
     }
   ];
 
@@ -80,18 +58,18 @@ const Departments = () => {
     <section id="departments" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="section-title">Our Departments</h2>
-          <p className="section-subtitle">
-            Comprehensive support across all aspects of engineering education and Islamic development
+          <h2 className="section-title">Departments</h2>
+          <p className="section-subtitle mb-4">
+            "Engineers by profession. Servants of Deen by purpose."
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {departments.map((dept, index) => (
             <div 
               key={dept.name}
               className="card-department group cursor-pointer"
-              style={{animationDelay: `${index * 0.05}s`}}
+              style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className={`w-16 h-16 bg-gradient-to-br ${dept.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                 <dept.icon className="w-8 h-8 text-white" />
@@ -101,9 +79,15 @@ const Departments = () => {
                 {dept.name}
               </h3>
               
-              <p className="text-muted-foreground text-center leading-relaxed text-sm">
+              <p className="text-muted-foreground text-center leading-relaxed text-sm mb-4">
                 {dept.description}
               </p>
+
+              <div className="text-center">
+                <p className="text-xs font-medium text-primary/70">
+                  Leads: {dept.leads}
+                </p>
+              </div>
               
               {/* Decorative bottom border */}
               <div className={`mt-4 h-1 bg-gradient-to-r ${dept.gradient} rounded-full mx-auto w-0 group-hover:w-full transition-all duration-500`}></div>
@@ -111,8 +95,17 @@ const Departments = () => {
           ))}
         </div>
 
+        {/* Islamic Foundation Quote */}
+        <div className="text-center mb-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
+          <h4 className="text-xl font-display font-bold text-primary mb-4">Islamic Foundation</h4>
+          <p className="text-muted-foreground italic leading-relaxed mb-2">
+            "Whoever relieves a Muslim of a burden from the burdens of the world, Allah will relieve him of a burden from the burdens on the Day of Judgement..."
+          </p>
+          <p className="text-sm text-muted-foreground">— Jami` at-Tirmidhi 1930</p>
+        </div>
+
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <div className="text-center animate-fade-in-up">
           <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
             <h3 className="text-2xl font-display font-bold text-primary mb-4">
               Ready to make an impact?
@@ -120,8 +113,8 @@ const Departments = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Join one of our departments and contribute to the growth of Muslim engineering community in Telangana.
             </p>
-            <a href="#contact" className="btn-hero">
-              Get Involved Today
+            <a href="#membership" className="btn-hero">
+              Join IESA Today
             </a>
           </div>
         </div>
