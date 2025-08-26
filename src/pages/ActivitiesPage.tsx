@@ -114,7 +114,7 @@ const ActivitiesPage = () => {
               </div>
 
               <div className="mt-8">
-                <a href="#contact" className="btn-hero">
+                <a href="/contact" className="btn-hero">
                   Stay Updated
                 </a>
               </div>

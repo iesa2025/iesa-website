@@ -53,9 +53,8 @@ const Activities = () => {
             </div>
 
             <div className="mt-8">
-              <a href="#contact" className="btn-hero">
-                Stay Updated
-              </a>
+            <a href="/contact" className="btn-hero">Contact</a>
+
             </div>
           </div>
         </div>
